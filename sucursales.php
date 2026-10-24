@@ -256,3 +256,43 @@ $pedidos = $_SESSION["pedidos"] ?? [];
                 </div>
 
             <?php } ?>
+
+            <!-- Botón para vaciar las órdenes -->
+            <form method="POST" action="sucursales.php"
+                  onsubmit="return confirm('¿Deseas vaciar todas las órdenes de esta sesión?');">
+
+                <button type="submit" name="vaciar" value="1"
+                        class="btn btn-outline-danger">
+                    <i class="bi bi-trash"></i>
+                    Vaciar órdenes
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer class="bg-vino text-white pt-4">
+        <div class="container text-center pb-3">
+
+            <h4 class="fw-bold">Bella Napoli</h4>
+            <p>Tradición italiana y sabor en cada porción.</p>
+
+            <p class="mb-1">
+                Horario: lunes a domingo, 11:00 a. m. - 10:00 p. m.
+            </p>
+
+            <p class="mb-0">
+                Bella Napoli © 2026 | Todos los derechos reservados
+            </p>
+
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
+
