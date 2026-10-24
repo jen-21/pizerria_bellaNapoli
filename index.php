@@ -67,6 +67,86 @@ $pizzas = [
 
         </div>
     </nav>
+    <header class="container my-5">
+        <div class="row align-items-center g-4">
+
+            <div class="col-lg-6">
+                <p class="texto-dorado fw-bold">PIZZERÍA ARTESANAL</p>
+
+                <h1 class="display-4 fw-bold texto-vino">
+                    El auténtico sabor de Italia
+                </h1>
+
+                <p class="fs-5">
+                    Disfruta nuestras pizzas preparadas con ingredientes
+                    frescos y el delicioso sabor que te encanta.
+                </p>
+
+                <a href="catalogo.php" class="btn btn-vino btn-lg">
+                    Ver nuestro menú
+                </a>
+
+                <a href="arma_pizza.php" class="btn btn-outline-vino btn-lg">
+                    Crea tu pizza
+                </a>
+            </div>
+
+            <div class="col-lg-6">
+                <img
+                    src="img/pizza1.png"
+                    class="img-fluid rounded shadow"
+                    alt="Pizza artesanal">
+            </div>
+
+        </div>
+    </header>
+
+    <main class="container my-5">
+
+        <div class="text-center mb-4">
+            <p class="texto-dorado fw-bold mb-1">NUESTRAS ESPECIALIDADES</p>
+            <h2 class="texto-vino fw-bold">Pizzas favoritas</h2>
+            <p>Conoce algunos de nuestros sabores más populares.</p>
+        </div>
+
+        <div class="row g-4">
+
+            <?php foreach ($pizzas as $pizza) { ?>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm tarjeta-pizza">
+
+                        <img
+                            src="<?php echo htmlspecialchars($pizza["imagen"]); ?>"
+                            class="card-img-top imagen-pizza"
+                            alt="<?php echo htmlspecialchars($pizza["nombre"]); ?>">
+
+                        <div class="card-body">
+                            <h5 class="card-title texto-vino fw-bold">
+                                <?php echo htmlspecialchars($pizza["nombre"]); ?>
+                            </h5>
+
+                            <p class="card-text">
+                                <?php echo htmlspecialchars($pizza["descripcion"]); ?>
+                            </p>
+
+                            <p class="fs-5 fw-bold texto-vino">
+                                L. <?php echo number_format($pizza["precio"], 2); ?>
+                            </p>
+
+                            <a href="catalogo.php" class="btn btn-vino">
+                                Ver detalles
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+
+            <?php } ?>
+
+        </div>
+    </main>
+
 
 </body>
 
