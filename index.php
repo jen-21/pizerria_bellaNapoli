@@ -147,6 +147,94 @@ $pizzas = [
         </div>
     </main>
 
+     <section class="container my-5">
+        <div class="bg-vino text-white text-center p-5 rounded">
+
+            <h2 class="fw-bold">¡Comparte el sabor!</h2>
+
+            <p class="fs-5">
+                Reúne a tu familia y amigos para disfrutar nuestras pizzas.
+            </p>
+
+            <a href="catalogo.php" class="btn btn-dorado">
+                Explorar catálogo
+            </a>
+
+        </div>
+    </section>
+
+    <footer class="bg-vino text-white pt-5">
+
+        <div class="container">
+            <div class="row g-4">
+
+                <div class="col-md-6 col-lg-3">
+                    <h4 class="fw-bold"> Bella Napoli</h4>
+                    <p>
+                        Tradición italiana y sabor en cada porción.
+                        ¡Nos encanta compartir buenos momentos contigo!
+                    </p>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold texto-dorado">Contáctanos</h5>
+                    <p> +504 2234-5678</p>
+                    <p> WhatsApp: +504 9876-5432</p>
+                    <p> info@bellanapoli.hn</p>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold texto-dorado">Nuestras sucursales</h5>
+                    <p> Tegucigalpa — Bulevar Morazan</p>
+                    <p> San Pedro Sula — Barrio Guamilito</p>
+                    <p> La Ceiba — </p>
+
+                    <a href="sucursales.php" class="link-light">
+                        Ver sucursales
+                    </a>
+                </div>
+
+                <div class="col-md-6 col-lg-3">
+                    <h5 class="fw-bold texto-dorado">Síguenos en redes</h5>
+
+                    <p>
+                        <a href="https://www.facebook.com/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="link-light">Facebook</a>
+                    </p>
+
+                    <p>
+                        <a href="https://www.instagram.com/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="link-light">Instagram</a>
+                    </p>
+
+                    <p>
+                        <a href="https://www.tiktok.com/"
+                           target="_blank" rel="noopener noreferrer"
+                           class="link-light">TikTok</a>
+                    </p>
+
+                    <h6 class="fw-bold">Horario</h6>
+                    <p>Lunes a domingo: 11:00 a. m. – 10:00 p. m.</p>
+                </div>
+
+            </div>
+
+            <hr class="border-light">
+
+            <div class="text-center pb-3">
+                <small>
+                    Bella Napoli © 2026 | Todos los derechos reservados
+                </small>
+            </div>
+        </div>
+
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
 
 </body>
 
