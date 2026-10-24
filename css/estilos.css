@@ -1,0 +1,108 @@
+
+/* Colores principales de Bella Napoli */
+:root {
+    --vino: #701923;
+    --vino-oscuro: #481016;
+    --crema: #f8f1e6;
+    --dorado: #d9ad54;
+}
+
+/* Fondo general */
+body {
+    background-color: var(--crema);
+}
+
+/* Color vino */
+.bg-vino {
+    background-color: var(--vino);
+}
+
+/* Textos */
+.texto-vino {
+    color: var(--vino);
+}
+
+.texto-dorado {
+    color: var(--dorado);
+}
+
+/* Botones */
+.btn-vino {
+    background-color: var(--vino);
+    color: white;
+    border: 1px solid var(--vino);
+}
+
+.btn-vino:hover {
+    background-color: var(--vino-oscuro);
+    border-color: var(--vino-oscuro);
+    color: white;
+}
+
+.btn-outline-vino {
+    color: var(--vino);
+    border: 1px solid var(--vino);
+}
+
+.btn-outline-vino:hover {
+    background-color: var(--vino);
+    color: white;
+}
+
+.btn-dorado {
+    background-color: var(--dorado);
+    color: var(--vino-oscuro);
+    font-weight: bold;
+}
+
+.btn-dorado:hover {
+    background-color: #c99b3e;
+    color: var(--vino-oscuro);
+}
+
+/* Tarjetas de pizzas */
+.tarjeta-pizza {
+    border: none;
+    overflow: hidden;
+}
+
+.imagen-pizza {
+    height: 220px;
+    object-fit: cover;
+}
+
+/* Imágenes*/
+img {
+    max-width: 100%;
+}
+
+/* Iconos de redes sociales */
+.icono-red {
+    width: 42px;
+    height: 42px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    font-size: 22px;
+    text-decoration: none;
+    transition: transform 0.2s;
+}
+
+.icono-red:hover {
+    color: white;
+    transform: translateY(-4px);
+}
+
+.facebook {
+    background-color: #1877F2;
+}
+
+.instagram {
+    background-color: #C13584;
+}
+
+.tiktok {
+    background-color: #111111;
+}

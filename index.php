@@ -32,6 +32,8 @@ $pizzas = [
     <title>Bella Napoli | Pizzería</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
           rel="stylesheet">
+    <link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 
@@ -187,7 +189,7 @@ $pizzas = [
                     <h5 class="fw-bold texto-dorado">Nuestras sucursales</h5>
                     <p> Tegucigalpa — Bulevar Morazan</p>
                     <p> San Pedro Sula — Barrio Guamilito</p>
-                    <p> La Ceiba — </p>
+                    <p> La Ceiba — Barrio la Merced</p>
 
                     <a href="sucursales.php" class="link-light">
                         Ver sucursales
@@ -197,23 +199,33 @@ $pizzas = [
                 <div class="col-md-6 col-lg-3">
                     <h5 class="fw-bold texto-dorado">Síguenos en redes</h5>
 
-                    <p>
+                    <div class="d-flex gap-3 mt-3">
+
                         <a href="https://www.facebook.com/"
-                           target="_blank" rel="noopener noreferrer"
-                           class="link-light">Facebook</a>
-                    </p>
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icono-red facebook"
+                        aria-label="Facebook">
+                            <i class="bi bi-facebook"></i>
+                        </a>
 
-                    <p>
                         <a href="https://www.instagram.com/"
-                           target="_blank" rel="noopener noreferrer"
-                           class="link-light">Instagram</a>
-                    </p>
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icono-red instagram"
+                        aria-label="Instagram">
+                            <i class="bi bi-instagram"></i>
+                        </a>
 
-                    <p>
                         <a href="https://www.tiktok.com/"
-                           target="_blank" rel="noopener noreferrer"
-                           class="link-light">TikTok</a>
-                    </p>
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="icono-red tiktok"
+                        aria-label="TikTok">
+                            <i class="bi bi-tiktok"></i>
+                        </a>
+
+                    </div>
 
                     <h6 class="fw-bold">Horario</h6>
                     <p>Lunes a domingo: 11:00 a. m. – 10:00 p. m.</p>
