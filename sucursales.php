@@ -93,4 +93,166 @@ $pedidos = $_SESSION["pedidos"] ?? [];
         </div>
     </nav>
 
-   
+    <main class="container my-5">
+
+        <!-- Encabezado -->
+        <div class="text-center mb-5">
+            <p class="texto-dorado fw-bold mb-1">ESTAMOS CERCA DE TI</p>
+            <h1 class="texto-vino fw-bold">Nuestras sucursales</h1>
+            <p>Visítanos y disfruta el auténtico sabor de Bella Napoli.</p>
+        </div>
+
+        <!-- Tarjetas de sucursales -->
+        <div class="row g-4 mb-5">
+
+            <?php foreach ($sucursales as $sucursal) { ?>
+
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-sm tarjeta-pizza">
+                        <div class="card-body">
+
+                            <h4 class="texto-vino fw-bold">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <?php echo htmlspecialchars($sucursal["ciudad"], ENT_QUOTES, "UTF-8"); ?>
+                            </h4>
+
+                            <p>
+                                <strong>Dirección:</strong>
+                                <?php echo htmlspecialchars($sucursal["direccion"], ENT_QUOTES, "UTF-8"); ?>
+                            </p>
+
+                            <p>
+                                <strong>Teléfono:</strong>
+                                <?php echo htmlspecialchars($sucursal["telefono"], ENT_QUOTES, "UTF-8"); ?>
+                            </p>
+
+                            <p>
+                                <strong>Horario:</strong>
+                                <?php echo htmlspecialchars($sucursal["horario"], ENT_QUOTES, "UTF-8"); ?>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+
+            <?php } ?>
+
+        </div>
+
+        <!-- Panel de órdenes -->
+        <section class="mb-5">
+
+            <div class="d-flex flex-wrap justify-content-between
+                        align-items-center gap-3 mb-3">
+
+                <div>
+                    <h2 class="texto-vino fw-bold">Panel de órdenes</h2>
+                    <p class="mb-0">
+                        Consulta de pedidos registrados en esta sesión.
+                    </p>
+                </div>
+
+                <span class="badge bg-vino fs-6">
+                    Órdenes: <?php echo count($pedidos); ?>
+                </span>
+
+            </div>
+
+            <!-- Mensaje cuando no hay pedidos -->
+            <?php if (empty($pedidos)) { ?>
+
+                <div class="alert alert-info" role="alert">
+                    Todavía no hay pedidos registrados en la sesión.
+                </div>
+
+            <?php } else { ?>
+
+                <!-- Tabla de órdenes -->
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped align-middle tabla-ordenes">
+
+                        <thead>
+                            <tr>
+                                <th>Folio</th>
+                                <th>Cliente</th>
+                                <th>Teléfono</th>
+                                <th>Detalle de pizzas</th>
+                                <th>Total (L.)</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                            <?php foreach ($pedidos as $pedido) { ?>
+
+                                <tr>
+                                    <td>
+                                        <?php
+                                        echo htmlspecialchars(
+                                            $pedido["folio"] ?? "Sin folio",
+                                            ENT_QUOTES,
+                                            "UTF-8"
+                                        );
+                                        ?>
+                                    </td>
+
+                                    <td>
+                                        <?php
+                                        echo htmlspecialchars(
+                                            $pedido["cliente"] ?? $pedido["nombre"] ?? "Sin nombre",
+                                            ENT_QUOTES,
+                                            "UTF-8"
+                                        );
+                                        ?>
+                                    </td>
+
+                                    <td>
+                                        <?php
+                                        echo htmlspecialchars(
+                                            $pedido["telefono"] ?? "No registrado",
+                                            ENT_QUOTES,
+                                            "UTF-8"
+                                        );
+                                        ?>
+                                    </td>
+
+                                    <td>
+                                        <?php
+                                        echo htmlspecialchars(
+                                            $pedido["detalle"] ?? $pedido["pizza"] ?? "No especificado",
+                                            ENT_QUOTES,
+                                            "UTF-8"
+                                        );
+                                        ?>
+                                    </td>
+
+                                    <td>
+                                        L.
+                                        <?php
+                                        echo number_format(
+                                            (float) ($pedido["total"] ?? 0),
+                                            2
+                                        );
+                                        ?>
+                                    </td>
+
+                                    <td>
+                                        <span class="badge bg-success">
+                                            <?php
+                                            echo htmlspecialchars(
+                                                $pedido["estado"] ?? "Registrado",
+                                                ENT_QUOTES,
+                                                "UTF-8"
+                                            );
+                                            ?>
+                                        </span>
+                                    </td>
+                                </tr>
+
+                            <?php } ?>
+                        </tbody>
+
+                    </table>
+                </div>
+
+            <?php } ?>
