@@ -107,7 +107,6 @@ img {
     background-color: #111111;
 }
 
-/* Estilo de la tabla de órdenes */
 .tabla-ordenes thead th {
     background-color: #5B4034;
     color: white;
@@ -121,4 +120,33 @@ img {
 .tabla-ordenes th,
 .tabla-ordenes td {
     padding: 12px;
+}
+
+.borde-resumen-vino {
+    border-left-color: var(--vino);
+}
+
+.insignia-paso {
+    width: 2rem;
+    height: 2rem;
+    display: inline-grid;
+    place-items: center;
+}
+
+.btn-check:checked + .btn-outline-vino {
+    background-color: #f5e6e8 ;
+    border-color: var(--vino) ;
+    color: var(--vino) ;
+}
+
+.btn-check:checked + .btn-outline-vino .text-muted {
+    color: var(--vino) ;
+}
+
+.select-personalizado {
+    border: 2px solid #e6dedc;
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: var(--vino);
 }
