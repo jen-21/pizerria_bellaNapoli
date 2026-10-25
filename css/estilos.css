@@ -106,3 +106,19 @@ img {
 .tiktok {
     background-color: #111111;
 }
+
+/* Estilo de la tabla de órdenes */
+.tabla-ordenes thead th {
+    background-color: #5B4034;
+    color: white;
+    vertical-align: middle;
+}
+
+.tabla-ordenes tbody tr:nth-child(even) {
+    background-color: #f8f1e6;
+}
+
+.tabla-ordenes th,
+.tabla-ordenes td {
+    padding: 12px;
+}
