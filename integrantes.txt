@@ -3,3 +3,4 @@ Integrantes del Grupo
 Nelson Alexander Iraheta Rosales - 20221030320, responsable del Catálogo.
 Flor Angel Arteaga Montes - 20211000147, realizó las Sucursales.
 Jenifer Ondina Barrantes Martínez - 20161000040 realizó el index.
+Francisco Emanuel Cruz Gómez - 20201002174 realizó el Módulo de Pedidos.
