@@ -39,19 +39,17 @@ document.addEventListener('DOMContentLoaded', function() {
         const textoExtras = nombresExtras.length === 0 ? 'Ninguno' : nombresExtras.join(', ');
         document.getElementById('resumen-extras').textContent = textoExtras;
 
-        // Actualizar total en pantalla
         etiquetaPrecioTotal.textContent = 'L ' + total.toFixed(2);
     }
 
     formularioPizza.addEventListener('change', actualizarCalculos);
 
-    // Acción del botón de confirmación
     const botonConfirmar = document.getElementById('botonConfirmar');
     if (botonConfirmar) {
         botonConfirmar.addEventListener('click', function() {
             const selectSalsa = document.getElementById('salsa');
             if (!selectSalsa.value) {
-                alert('Por favor elige una salsa base antes de continuar.');
+                alert('Por favor elige una salsa base antes de continuar');
                 selectSalsa.focus();
                 return;
             }
@@ -73,6 +71,5 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Inicializar al cargar
     actualizarCalculos();
 });
