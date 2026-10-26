@@ -437,105 +437,132 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             </div>
         <?php } ?>
 
-        <section>
-            <form action="pedidos.php" method="post">
-                <?php if (!empty($errores)) { ?>
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Hay errores en tu pedido:</strong>
-
-                        <ul class="mb-0">
-                            <?php foreach ($errores as $error) { ?>
-                                <li>
-                                    <?php echo htmlspecialchars($error, ENT_QUOTES, "UTF-8"); ?>
-                                </li>
-                            <?php } ?>
-                        </ul>
-                    </div>
-                <?php } ?>
-                <div>
-                    <label>Nombre completo:</label><br>
-                    <input type="text" id="nombre" name="nombre" placeholder="Escribe tu Nombre" required>
-                </div>
-                <br>
-                <div>
-                    <label>Correo electrónico:</label><br>
-                    <input type="email" id="correo" name="correo" placeholder="nombre@correo.com" required>
-                </div>
-                <br>
-                <div>
-                    <label>RTN: </label><br>
-                    <input type="text" id="rtn" name="rtn" placeholder="Ingrese su RTN" required>
-                </div>
-                <br>
-                <div>
-                    <label>Telefono: </label><br>
-                    <input type="text" id="telefono" name="telefono" placeholder="Ingrese su Telefono" required>
-                </div>
-                <br>
-                <div class="mb-3">
-                    <label for="pizza" class="form-label">Selecciona tu producto:</label>
-
-                    <select id="pizza" name="pizza" class="form-select" required>
-                        <option value="">Selecciona un producto</option>
-
-                        <?php foreach ($catalogo as $idCategoria => $categoria) { ?>
-                            <optgroup label="<?php echo htmlspecialchars($categoria["titulo"], ENT_QUOTES, "UTF-8"); ?>">
-
-                                <?php foreach ($categoria["items"] as $indice => $item) { ?>
-                                    <option value="<?php echo $idCategoria . ':' . $indice; ?>">
-                                        <?php echo htmlspecialchars($item["nombre"], ENT_QUOTES, "UTF-8"); ?>
-                                    </option>
-                                <?php } ?>
-
-                            </optgroup>
-                        <?php } ?>
-                    </select>
-                </div>
-
-                <div class="mb-3">
-                    <label for="tamano" class="form-label">Tamaño:</label>
-                    <select id="tamano" name="tamano" class="form-select" required>
-                        <option value="">Selecciona un tamaño</option>
-                        <option value="personal">Personal</option>
-                        <option value="mediana">Mediana</option>
-                        <option value="familiar">Familiar</option>
-                        <option value="gigante">Gigante</option>
-                    </select>
-                </div>
         
-                <div class="mb-3">
-                    <label for="cantidad" class="form-label">Cantidad:</label>
-                    <input type="number" id="cantidad" name="cantidad"
-                        class="form-control" min="1" value="1" required>
+        <section class="row justify-content-center">
+            <div class="col-12 col-lg-9 col-xl-8">
+
+                <div class="card shadow-sm border-0">
+                    <div class="card-body p-4 p-md-5">
+
+                        <h2 class="h4 texto-vino fw-bold mb-2">
+                            <i class="bi bi-bag-check me-2"></i>
+                            Datos de tu pedido
+                        </h2>
+
+                        <p class="text-secondary mb-4">
+                            Completa tus datos y selecciona tus productos favoritos.
+                        </p>
+
+                        <form action="pedidos.php" method="post">
+
+                            <div class="mb-3">
+                                <label for="nombre" class="form-label"> Nombre completo</label>
+                                <input type="text" id="nombre" name="nombre" class="form-control" placeholder="Escribe tu nombre completo" minlength="5" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="correo" class="form-label">Correo electrónico</label>
+                                <input type="email" id="correo" name="correo" class="form-control" placeholder="nombre@correo.com" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="rtn" class="form-label">RTN</label>
+                                <input type="text" id="rtn" name="rtn" class="form-control" placeholder="Ingrese su RTN" inputmode="numeric" pattern="[0-9]{14}" maxlength="14" required>
+                                <div class="form-text">
+                                    Debe contener 14 dígitos numéricos.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="telefono" class="form-label">Teléfono</label>
+                                <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="Ingrese su teléfono" inputmode="numeric" pattern="[0-9]{8}" maxlength="8" required>
+                                <div class="form-text">
+                                    Debe contener 8 dígitos numéricos.
+                                </div>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pizza" class="form-label">Selecciona tu producto</label>
+                                <select id="pizza" name="pizza"class="form-select" required>
+                                    <option value="">Selecciona un producto</option>
+
+                                    <?php foreach ($catalogo as $idCategoria => $categoria) { ?>
+                                        <optgroup label="<?php echo htmlspecialchars($categoria["titulo"], ENT_QUOTES, "UTF-8"); ?>">
+
+                                            <?php foreach ($categoria["items"] as $indice => $item) { ?>
+                                                <option value="<?php echo $idCategoria . ':' . $indice; ?>">
+                                                    <?php echo htmlspecialchars($item["nombre"], ENT_QUOTES, "UTF-8"); ?>
+                                                </option>
+                                            <?php } ?>
+
+                                        </optgroup>
+                                    <?php } ?>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="tamano" class="form-label">Tamaño</label>
+                                <select id="tamano" name="tamano"
+                                    class="form-select" required>
+                                    <option value="">Selecciona un tamaño</option>
+                                    <option value="personal">Personal</option>
+                                    <option value="mediana">Mediana</option>
+                                    <option value="familiar">Familiar</option>
+                                    <option value="gigante">Gigante</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="cantidad" class="form-label">Cantidad</label>
+                                <input type="number" id="cantidad" name="cantidad" class="form-control" min="1" value="1" required>
+                            </div>
+
+                        <div class="mb-3">
+                                <label for="entrega" class="form-label">
+                                    Modalidad de entrega
+                                </label>
+                                <select id="entrega" name="entrega"
+                                    class="form-select" required>
+                                    <option value="domicilio" selected>
+                                        Envío a domicilio
+                                    </option>
+                                    <option value="llevar">Para llevar (Pick-Up)</option>
+                                    <option value="restaurante">Comer en restaurante</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label for="pago" class="form-label">
+                                    Método de pago
+                                </label>
+                                <select id="pago" name="pago"
+                                    class="form-select" required>
+                                    <option value="efectivo">Efectivo</option>
+                                    <option value="tarjeta">Tarjeta de crédito/débito</option>
+                                    <option value="transferencia">Transferencia</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-4">
+                                <label for="direccion" class="form-label">
+                                    Dirección de entrega y punto de referencia
+                                </label>
+                                <textarea id="direccion" name="direccion" class="form-control" rows="3" placeholder="Indica tu dirección y un punto de referencia" required></textarea>
+                            </div>
+
+                            <button type="submit"class="btn btn-vino w-100 py-2 fw-bold">
+                                <i class="bi bi-receipt me-2"></i>
+                                Realizar pedido
+                            </button>
+
+                        </form>
+
+                    </div>
                 </div>
 
-                <div>
-                    <label >Modalidad de Entrega</label><br>
-                    <select id="entrega" name="entrega" required>
-                        <option value="domicilio" selected>Envio a Domicilio</option>
-                        <option value="llevar">Para LLevar</option>
-                        <option value="restaurante">Comer en Restaurante</option>
-                    </select>
-                </div>
-                <br>
-                <div>
-                    <label >Metodo de Pago</label><br>
-                    <select id="pago" name="pago" required>
-                        <option value="efectivo">Efectivo</option>
-                        <option value="tarjeta">Tarjeta de Credito/Debito</option>
-                        <option value="tranferencia">Transferencia</option>
-                    </select>
-                </div>
-                <br>
-                <div>
-                    <label>Direccion de Entrega y Punto de Referencia: </label><br>
-                    <textarea id="direccion" name="direccion" required></textarea>
-                </div>
-                <div>
-                    <button type="submit">Realizar Pedido</button>
-                </div>
-            </form>
+            </div>
         </section>
+
 
     </main>
 
