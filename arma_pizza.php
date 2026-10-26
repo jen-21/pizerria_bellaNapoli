@@ -6,7 +6,7 @@ $precioBase = 150;
 $masas = [
     'tradicional' => ['nombre' => 'Tradicional italiana',     'precio' => 0],
     'delgada'     => ['nombre' => 'Delgada / Crocante',       'precio' => 0],
-    'orilla'      => ['nombre' => 'Orilla rellena de queso',  'precio' => 25],
+    'orilla'      => ['nombre' => 'Orilla rellena de queso',  'precio' => 80],
 ];
 
 $salsas = [
